@@ -1,0 +1,7 @@
+ru:
+  menu:
+    home: "ГЛАВНАЯ"
+    restaurants: "РЕСТОРАНЫ"
+    about: "О НАС"
+  restaurants:
+    title: "Рестораны"

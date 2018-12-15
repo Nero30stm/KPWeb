@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<script src="https://api-maps.yandex.ru/2.1/?apikey=<85f5113c-525d-4ba2-9608-cff3a16e10ad>&lang=ru_RU" type="text/javascript"></script>
+<script type="text/javascript"></script>
+<% content_for :title, "BEST RESTAURANT"%>
+</head>
+
+<body>
+      <div id="navbar" class="fixed-menu-top">
+        <ul class="main">
+          <li>
+            <%= link_to (t ('menu.home')), welcome_index_url %>
+          </li>
+          <li>
+            <%= link_to (t ('menu.restaurants')), restaurants_url %>
+             <ul class="drop menu5">
+              <li><a href="#">menu</a></li>
+              <li><a href="#">menu</a></li>
+              <li><a href="#">menu</a></li>
+              <li><a href="#">menu</a></li>
+            </ul>
+          </li>
+          <li>
+            <%= link_to (t ('menu.about')), restaurants_url %>
+             <ul class="drop menu5">
+              <li><a href="#">menu</a></li>
+              <li><a href="#">menu</a></li>
+              <li><a href="#">menu</a></li>
+              <li><a href="#">menu</a></li>
+            </ul>
+          </li>
+          <p style="right: 5px; position: absolute;">
+          Language:
+          <%= link_to_unless_current "English", locale: "en" %> |
+          <%= link_to_unless_current "Русский", locale: "ru" %> 
+        </p>
+        </ul>
+      </div>
+
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+<%= render 'welcome/menu' %>
+
+<section class="main-section">
+<div class = "big_banner">
+<h2 align="center" style="padding-top: 3%"><%= @restaurant.name %>
+
+</div>
+
+ <section id="big_img">
+      <article>
+        <a>
+          <figure>
+           <%= image_tag @restaurant.mainPhoto_url().to_s, :class => "style_image"%>
+            <figcaption>
+             
+              <div>
+              <h3 style="margin-top: 12vw; margin-left: -1vw">Description: </h3>
+            </div>
+            <div class="d">
+              <%= @restaurant.descr %>
+            </div>
+            <script> 
+
+
+
+
+
+           </script>
+
+            </figcaption>
+          </figure>
+        </a>
+      </article>
+    </section>
+
+
+
+
+  <h2><%= link_to "restaurant menu", restaurant_products_path(@restaurant, @products)%></h2>
+
+
+<h2><%= link_to "add order", restaurant_restbookings_path(@restaurant, @restbookings)%></h2>
+
+
+
+
+
+
+
+
+
+    <h2>Add a comment:</h2>
+         <%= form_with(model: [ @restaurant, @restaurant.restreviews.build ], local: true) do |form| %>
+         <p>
+         <%= form.label :name, 'Write your name' %><br>
+         <%= form.text_field :name %>
+         </p>
+         <p>
+          <%= form.label :descr, 'Write your comment' %><br>
+          <%= form.text_area :descr %>
+        </p>
+      <p>
+      <%= form.label :rate, 'Level of hotel' %><br>
+</p>
+<fieldset class="rating">
+    <legend>Please rate:</legend>
+     <%= form.radio_button :rate, 5, :class => "rating", :id => "star5"%><label for="star5" title="Excelent!">5 stars</label>
+     <%= form.radio_button :rate, 4, :class => "rating", :id => "star4"%><label for="star4" title="Good">4 stars</label>
+     <%= form.radio_button :rate, 3, :class => "rating", :id => "star3"%><label for="star3" title="normal">3 stars</label>
+     <%= form.radio_button :rate, 2, :class => "rating", :id => "star2"%><label for="star2" title="bad">2 stars</label>
+     <%= form.radio_button :rate, 1, :class => "rating", :id => "star1"%><label for="star1" title="Very bad">1 star</label>
+     </fieldset>
+     <p><%= form.submit %></p>
+      <%end%>
+     </h2>
+<% @restaurant.restreviews.each do |r| %>
+  <div class="comment">
+  <p>
+    <strong>Commenter:</strong>
+    <%= r.name %>
+  </p>
+  <p>
+    <strong>Description:</strong>
+    <%= r.descr %>
+  </p>
+  <%end%>
+     </div>
+
+
+<%= render 'welcome/footer' %>
+</section>
+

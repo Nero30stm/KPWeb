@@ -1,0 +1,36 @@
+<%= render 'welcome/menu' %>
+
+
+<section class="main-section">
+
+
+
+<section id="gallery">
+ <% @restaurant.products.each do |product| %>
+ 	<ul>
+ 		<li>
+ 			<article>
+ 				<a href="">
+ 					<figure>
+ 						<%= image_tag product.mainPhoto_url(:min_rest).to_s, :class => ""%>
+ 						<figcaption>
+ 							<header>
+ 								<%= product.name %>
+ 							</header>
+ 							<%= product.price %>
+ 							<p>Press to read the comments</p>
+ 						</figcaption>
+ 					</figure>
+ 				</a>
+ 			</article>
+ 		</li>
+ 	</ul>
+ <%end%>
+</section>
+
+
+
+
+
+
+</section>

@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+env: &env
+  host: localhost
+  database: my_restaurantDB
+  username: myuser
+  password: 'mypass'
+
+development: &development
+  <<: *default
+  <<: *env
+
+test:
+  <<: *default
+  <<: *env
+  database: my_restaurantDBTest
+  timeout: 10000
+  pool: 10
+

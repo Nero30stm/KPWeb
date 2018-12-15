@@ -1,0 +1,13 @@
+<% @restaurant.menus.each do |r| %>
+ <% r.dishes.each do |s| %>
+  <div class="comment">
+  <p>
+    <strong>Commenter:</strong>
+    <%= s.name %>
+  </p>
+  <p>
+    <strong>Description:</strong>
+    <%= s.descr %>
+  </p>
+  <%end%>
+     </div>

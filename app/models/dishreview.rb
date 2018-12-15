@@ -1,0 +1,2 @@
+class Dishreview < ApplicationRecord
+end

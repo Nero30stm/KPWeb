@@ -1,0 +1,140 @@
+.one_restaurant{
+background: rgba(0,0,0,0.40);
+display: -webkit-flex; 
+display: flex;
+  position: relative;
+  margin: 2%;
+  padding: 2%;
+  flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.searchBlock{
+margin: 2%;
+  right: 0;
+}
+.searchLine{
+  border: 10px solid #7109AA; //цвет рамки
+   border-radius: 40px; //закругление углов (общее)
+   -webkit-border-radius: 40px; //закругление углов (Google Chrome)
+   -moz-border-radius: 40px; //закругление углов (FireFox)
+   -khtml-border-radius: 40px; //закругление углов (Safari)
+   background: #ffffff !important; // желательно прописывать, так как в Chrome при сохранных данных оно может быть желтым
+   outline: none; // удаляет обводку в браузерах хром(желтая) и сафари(синяя)
+   height: 24px; // высота на свое усмотрение
+   width: 300px; // ширина на свое усмотрение
+   color: #cccccc; //цвет шрифта в обычном состоянии
+   font-size: 11px; // Размер шрифта
+   font-family: Tahoma; // Стиль шрифта
+}
+
+.searchButton{
+border: 10px solid #7109AA; //цвет рамки
+   border-radius: 40px; //закругление углов (общее)
+  position:relative;
+}
+.d10{
+display: -webkit-flex; 
+display: flex;
+  position: relative;
+  margin: 0;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  width: auto;
+  margin: 2%;
+  padding: 0;
+  letter-spacing: 2px;
+  text-align: center;
+  border: 2px solid #AD66D5;
+}
+
+.d10 > h3{
+
+  margin: 2%;
+  color: #AD66D5;
+  font-size: 30px;
+}
+
+.prokrutka {
+  border: 10px solid #7109AA;
+  padding: 0 1vw;
+  height: 8vw;
+  width: 100%;
+  background:#f2f3ee;
+  word-wrap: break-word;
+  overflow: auto;
+  font-size: 2vw;
+  color: black;
+}
+
+.info-rest{
+display: flex;
+	width: 40%;
+  float: right;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.box {
+  position: relative;
+  overflow: hidden;
+  height: 300px;
+  width: 400px;
+  cursor: pointer;
+}
+
+.hover-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(5, 8, 31, 0.62);
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.box:hover .hover-effect {
+  opacity: 1;
+}
+.box:hover .hover-text {
+  right: 0;
+}
+
+.hover-text {
+  position: absolute;
+  right: -100%;
+  bottom: 0;
+  display: block;
+  max-width: 100%;
+  padding: 40px 45px;
+  color: #e2e2e2;
+  text-decoration: none;
+  text-align: right;
+  line-height: 1.5em;
+  font-size: 15px;
+  font-family: "Proxima Nova";
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  transition: all 0.5s ease-in-out;
+}
+
+h1-for-hover {
+  font-size: 2em;
+  font-weight: 500;
+  padding: 0.8em 0;
+  margin-bottom: 0.3em;
+  border-bottom: 1px solid #fff;
+}
+
+p-for-hover {
+    width: 70%;
+    line-height: 1.7em;
+    display: inline-block;
+    text-align: right;
+}
+
+
+
+

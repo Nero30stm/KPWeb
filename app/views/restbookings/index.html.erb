@@ -1,0 +1,50 @@
+ <script type="text/javascript">
+  $(document).ready(function () {
+  //Даты на которые календарь отклю
+  
+
+var dates = [];
+for(var i = 0; i < gon.restbook.length; i++)
+{
+   dates.push(gon.restbook[i].requested_date)
+}
+
+function unavailable(date) {
+  dmy = date.getDate() + "-" + (date.getMonth()+1) + "-" + date.getFullYear();
+  if ($.inArray(dmy, dates) < 0) {
+    return [true,"","Book Now"];
+  } else {
+    return [false,"","Booked Out"];
+  }
+}
+
+
+  $('#restbooking_requested_date').datepicker({
+   dateFormat: "dd-mm-yy",
+   beforeShowDay: unavailable,
+    minDate: 0, 
+    maxDate: 30,
+  });
+});
+ </script>
+
+ <%= render 'welcome/menu' %>
+
+<section class="main-section">
+ <h2>reserve restaurant:</h2>
+         <%= form_with(model: [ @restaurant, @restaurant.restbookings.build ], local: true) do |form| %>
+         <p>
+         <%= form.label :user_name, 'write your name' %><br>
+         <%= form.text_field :user_name %>
+         </p>
+         <p>
+         <%= form.label :email, 'write your email' %><br>
+         <%= form.text_field :email%>
+         </p>
+         <p>
+         <%= form.label :requested_date, 'choose a date' %><br>
+         <%= form.text_field :requested_date, autocomplete: "off" %>
+         </p>
+         <p><%= form.submit %></p>
+         <%end%>
+         </section>

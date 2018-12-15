@@ -1,0 +1,72 @@
+/*---------альбом---------------*/ 
+#AlbumSection 
+{ 
+	width: 100%; 
+	float: left; 
+	margin: 200px 0 130px 0; 
+} 
+
+#gallery { 
+	display: block; 
+	line-height: 1.6em; 
+	width: 100%; 
+	margin-bottom: 2px; 
+	margin-left: auto;
+	margin-right: auto;
+	heigth: auto;
+} 
+#gallery ul { 
+list-style: none outside none; 
+margin: 40px 80px; 
+padding: 0; 
+} 
+#gallery li { 
+display: block; 
+float: left; 
+height: 300px; 
+margin: 40px 40px 4px 4px; 
+padding: 0; 
+width: 300px; 
+} 
+#gallery article a img { 
+border: 1px solid #000000; 
+display: block; 
+} 
+#gallery article a:hover img { 
+border-color: #ff1d85; 
+} 
+#gallery article a:hover figcaption { 
+background-color: #000000; 
+color: #FFFFFF; 
+display: block; 
+height: 280px; 
+left: 1px; 
+opacity: 0.7; 
+padding: 10px; 
+position: absolute; 
+top: 1px; 
+width: 280px; 
+} 
+#gallery article figure { 
+display: block; 
+position: relative; 
+width: 100%; 
+} 
+#gallery article figure img { 
+height: 300px; 
+width: 300px; 
+} 
+#gallery article figure figcaption { 
+display: none; 
+text-align: center; 
+} 
+#gallery article figure figcaption header { 
+display: block; 
+font-size: 16px; 
+font-weight: bold; 
+margin: 40px 0 15px; 
+text-transform: uppercase; 
+} 
+#gallery ul > li:first-child, #gallery ul > li:first-child + li + li + li + li, #gallery ul > li:first-child + li + li + li + li + li + li + li + li { 
+margin-left: 0; 
+}

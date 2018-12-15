@@ -1,0 +1,74 @@
+<%= render 'welcome/menu' %>
+<script>
+$(document).ready(function () {
+
+
+
+var placemarks = []
+for(var i = 0; i < gon.rest.length; i++)
+{
+   placemarks[i] = {latitude: gon.rest[i].latitude, longitude: gon.rest[i].longitude, hintContent: gon.rest[i].name}
+} 
+    ymaps.ready(init);
+    function init(){ 
+        // Создание карты.    
+        var myMap = new ymaps.Map("map", {
+            center: [55.76, 37.64],
+            zoom: 5
+        });
+
+ MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+            '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+        ),
+        placemarks.forEach(function(obj){
+          var placemark = new ymaps.Placemark([obj.latitude, obj.longitude],
+            {
+              hintContent: obj.hintContent
+            });
+          myMap.geoObjects.add(placemark)
+        });
+
+    }
+});
+</script>
+<section class="main-section">
+<section class="content-section">
+
+  <div class="d10"><h3><%= t "restaurants.title" %></h3>
+  <%= form_tag restaurants_path, class: "searchBlock", method: :get do %>
+  <p>
+    <%= text_field_tag :query, params[:query], :placeholder => "Search Events", :class => "searchLine", :size => "20" %>
+    <%= submit_tag "Search", name: nil,  :class => "searchButton" %>
+  </p>
+<% end %>
+</div>
+  <% @restaurants.each do |restaurant| %>        
+    <div class="one_restaurant">
+      <div class="box">
+        <p><%= image_tag restaurant.mainPhoto_url(:min_rest).to_s, :class => ""%></p>
+        <div class="hover-effect">
+          <a href="#" class="hover-text">
+            <h1>Title</h1>
+            <p>tralala</p>
+          </a>
+        </div>
+      </div>
+      <div class="info-rest">
+        <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h2>
+        <br>
+        <div class="prokrutka">
+          <%= restaurant.descr %>
+        </div>
+        <h3>Adress: <%= restaurant.addr %></h3>
+      </div>
+    </div>
+  <% end %>
+   <%= paginate @restaurants%>
+<div id="map" style="width: 80vw; height: 50vh; margin-left: auto; margin-right: auto;"></div>
+  </section>
+ 
+  <%= render 'welcome/footer' %>
+</section>
+
+
+

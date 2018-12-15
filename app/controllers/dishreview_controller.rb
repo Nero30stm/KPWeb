@@ -1,0 +1,2 @@
+class DishreviewController < ApplicationController
+end

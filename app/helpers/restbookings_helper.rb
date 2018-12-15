@@ -1,0 +1,2 @@
+module RestbookingsHelper
+end
